@@ -3,6 +3,6 @@
   gather_facts: false
   tasks:
   - name: ifconfig
-    command: ifconfig
+    command: yum updateinfo list security
     register: out
   - debug: var=out.stdout_lines
