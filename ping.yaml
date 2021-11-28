@@ -3,3 +3,6 @@
   gather_facts: false
   tasks:
     - ping:
+  register: out
+- debug:
+    var: out.stdout_lines
