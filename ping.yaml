@@ -1,0 +1,8 @@
+---
+name: Test Connectivity to all hosts
+hosts: all
+gather_facts: yes
+
+tasks:
+- name: Ping
+  ping:
