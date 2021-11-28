@@ -2,6 +2,7 @@
 - hosts: all
   gather_facts: false
   tasks:
-    - ping:
-      register: out
-    - debug: var=out.stdout
+  - name: ifconfig
+    command: ifconfig
+    register: out
+  - debug: var=out.stdout_lines
