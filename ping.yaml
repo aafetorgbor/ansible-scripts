@@ -1,5 +1,4 @@
 ---
-name: Test Connectivity to all hosts
 hosts: all
 become: yes
 gather_facts: false
