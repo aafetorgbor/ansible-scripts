@@ -12,10 +12,10 @@
   gather_facts: true
   tasks:
   - name: Network Configurations
-    command: ifconifig
+    command: ifconfig
     
     
-- hosts: tower-group
+- hosts: ipa-rep-group
   gather_facts: true
   tasks:
   - name: Ping Google.com
