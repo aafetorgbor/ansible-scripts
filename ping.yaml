@@ -1,5 +1,5 @@
 ---
-- hosts: tower group
+- hosts: 'tower group'
   gather_facts: false
   tasks:
   - name: ifconfig
