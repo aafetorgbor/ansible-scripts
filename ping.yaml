@@ -13,10 +13,14 @@
   tasks:
   - name: Network Configurations
     command: ifconfig
+    register: out
+  - debug: var=out.stdout_lines
     
     
 - hosts: ipa-rep-group
   gather_facts: true
   tasks:
   - name: Ping Google.com
-    command: ping 8.8.8.8    
+    command: ping 8.8.8.8  
+    register: out
+  - debug: var=out.stdout_lines
