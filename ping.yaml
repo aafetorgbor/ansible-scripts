@@ -2,7 +2,21 @@
 - hosts: tower-group
   gather_facts: false
   tasks:
-  - name: ifconfig
+  - name: Check For Security Updates
     command: yum updateinfo list security
     register: out
   - debug: var=out.stdout_lines
+
+
+- hosts: redhat-client-group
+  gather_facts: true
+  tasks:
+  - name: Network Configurations
+    command: ifconifig
+    
+    
+- hosts: tower-group
+  gather_facts: true
+  tasks:
+  - name: Ping Google.com
+    command: ping 8.8.8.8    
