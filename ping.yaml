@@ -3,7 +3,7 @@
   gather_facts: false
   tasks:
   - name: Check For Security Updates
-    command: yum updateinfo list security
+    command: free
     register: out
   - debug: var=out.stdout_lines
 
