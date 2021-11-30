@@ -17,10 +17,3 @@
   - debug: var=out.stdout_lines
     
     
-- hosts: ipa-rep-group
-  gather_facts: false
-  tasks:
-  - name: Check Disk
-    command: df -h
-    register: out
-  - debug: var=out.stdout_lines
