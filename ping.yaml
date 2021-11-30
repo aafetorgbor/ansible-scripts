@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: redhat-client-group
   gather_facts: false
   tasks:
   - name: ifconfig
