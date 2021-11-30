@@ -9,7 +9,7 @@
 
 
 - hosts: redhat-client-group
-  gather_facts: true
+  gather_facts: false
   tasks:
   - name: Network Configurations
     command: ifconfig
@@ -18,7 +18,7 @@
     
     
 - hosts: ipa-rep-group
-  gather_facts: true
+  gather_facts: false
   tasks:
   - name: Check Disk
     command: df -h
