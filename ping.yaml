@@ -20,7 +20,7 @@
 - hosts: ipa-rep-group
   gather_facts: true
   tasks:
-  - name: Ping Google.com
-    command: ping 8.8.8.8  
+  - name: Check Disk
+    command: df -h
     register: out
   - debug: var=out.stdout_lines
