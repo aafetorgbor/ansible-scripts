@@ -33,15 +33,15 @@
   
   
   
-  - name: CHECK IP CONFIGURATIONS
-  hosts: ipa-rep-group
-  gather_facts: no
+ - name: CHECK IP CONFIGURATIONS
+   hosts: ipa-rep-group
+   gather_facts: no
 
-  tasks:
-  - name: Check ifconfig
-    command: df -h   
-    register: out
-  - debug: var=out.stdout_lines
+   tasks:
+   - name: Check ifconfig
+     command: df -h   
+     register: out
+   - debug: var=out.stdout_lines
    
 
 
