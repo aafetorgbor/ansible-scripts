@@ -1,47 +1,47 @@
 ---
-- name: Ping All Host
+- name: CHECK FOR PING CONNECTIVITY
   hosts: all
   gather_facts: true
 
   tasks:
-  - name: Check for connectivity
+  - name: Ping all host
     ansible.builtin.ping:
     
     register: out
   - debug: var=out
    
    
-- name: Check for Updates
+- name: CHECK FOR SECURITY UPDATES
   hosts: tower-group
   gather_facts: true
 
   tasks:
-  - name: Check for Security Updates
+  - name: Check Security Updates
     command: yum updateinfo list security all
     
     register: out
   - debug: var=out
    
   
-- name: Check for Disk space
+- name: CHECK DISK SPACE
   hosts: redhat-client-group
   gather_facts: true
 
   tasks:
-  - name: Check for disk
+  - name: Disk space
     command: df -h
     
     register: out
   - debug: var=out
   
   
-  - name: Check Google
+  - name: CHECK IP CONFIGURATIONS
   hosts: ipa-rep-group
   gather_facts: true
 
   tasks:
-  - name: Ping goole
-    command: ping 8.8.8.8 -c 3
+  - name: Check ifconfig
+    command: ifconfig
     
     register: out
   - debug: var=out
