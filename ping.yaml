@@ -33,13 +33,13 @@
   
   
   
-- name: CHECK DISK SPACE
+- name: CHECK FOR YUM REPO
   hosts: ipa-rep-group
   gather_facts: no
 
   tasks:
-  - name: Disk space
-    command: ifconfig 
+  - name: Yum repolist
+    command: yum repolist
     register: out
   - debug: var=out.stdout_lines
   
