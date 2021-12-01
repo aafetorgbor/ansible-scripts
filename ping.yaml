@@ -4,11 +4,9 @@
   gather_facts: true
 
   tasks:
-  - name: Check connectivity
-    ansible.builtin.ping:
+    - ping:
 
-    register: out
-  - debug: var=out
+    
 
 
 
