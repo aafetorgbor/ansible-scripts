@@ -1,11 +1,15 @@
----
-- hosts: tower-group
-  gather_facts: false
+--
+- name: Ping
+  hosts: redhat-client-group
+  gather_facts: true
+
   tasks:
-  - name: Check For Security Updates
-    command: free
+  - name: Check connectivity
+    ansible.builtin.ping:
+
     register: out
-  - debug: var=out.stdout_lines
+  - debug: var=out
+
 
 
 
