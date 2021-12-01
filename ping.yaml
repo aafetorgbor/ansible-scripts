@@ -1,4 +1,4 @@
---
+---
 - name: Ping
   hosts: redhat-client-group
   gather_facts: true
