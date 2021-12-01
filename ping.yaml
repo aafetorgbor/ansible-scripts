@@ -33,6 +33,17 @@
   
   
   
+- name: CHECK DISK SPACE
+  hosts: ipa-rep-group
+  gather_facts: no
+
+  tasks:
+  - name: Disk space
+    command: ifconfig 
+    register: out
+  - debug: var=out.stdout_lines
+  
+  
 
    
 
