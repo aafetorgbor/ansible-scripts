@@ -29,7 +29,7 @@
   - name: Disk space
     command: free   
     register: out
-  - debug: var=out
+  - debug: var=out.stdout_lines
   
   
   
