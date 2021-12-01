@@ -13,7 +13,7 @@
   tasks:
   - name: Network Configurations
     command: ifconfig
-    register: out
-  - debug: var=out.stdout_lines
+    register: output
+  - debug: var=output.stdout_lines
     
     
