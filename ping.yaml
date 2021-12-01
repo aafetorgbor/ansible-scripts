@@ -9,15 +9,15 @@
  
    
    
-# - name: CHECK FOR SECURITY UPDATES
-#   hosts: tower-group
-#   gather_facts: no
+- name: CHECK FOR SECURITY UPDATES
+  hosts: tower-group
+  gather_facts: no
 
-#   tasks:
-#   - name: Check Security Updates
-#     command: yum updateinfo list security all 
-#     register: out
-#   - debug: var=out
+  tasks:
+  - name: Check Security Updates
+    command: yum updateinfo list security all 
+    register: out
+  - debug: var=out
 
 
   
