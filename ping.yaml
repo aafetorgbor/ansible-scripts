@@ -1,6 +1,6 @@
 ---
-- name: Ping
-  hosts: redhat-client-group
+- name: Ping All Host
+  hosts: all
   gather_facts: true
 
   tasks:
@@ -10,8 +10,43 @@
     register: out
   - debug: var=out
    
-  
+   
+- name: Check for Updates
+  hosts: tower-group
+  gather_facts: true
+
+  tasks:
+  - name: Check for Security Updates
+    command: yum updateinfo list security all
     
+    register: out
+  - debug: var=out
+   
+  
+- name: Check for Disk space
+  hosts: redhat-client-group
+  gather_facts: true
+
+  tasks:
+  - name: Check for disk
+    command: df -h
+    
+    register: out
+  - debug: var=out
+  
+  
+  - name: Check Google
+  hosts: ipa-rep-group
+  gather_facts: true
+
+  tasks:
+  - name: Ping goole
+    command: ping 8.8.8.8 -c 3
+    
+    register: out
+  - debug: var=out
+   
+   
 
     
 
